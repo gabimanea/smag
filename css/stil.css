@@ -1,11 +1,30 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300');
-* {margin:0;padding:0;}
-html {margin:0;padding:0;height:100%;}
-html,body{width:100%;}
-body{
+* {
+  margin:0;
+  padding:0;
+}
+html {
+  margin:0;
+  padding:0;
+  height:100%;
+}
+html,body {
+  width:100%;
+}
+header, section, footer, aside, nav, main, article, figure {
+    display: block;
+}
+body {
   background-color: rgba(185,185,185,0.5);
-  font-family: "Open Sans", Arial, sans-serif;}
-nav ul li {display:inline;}
-.unu {color:red;}
-.doi {color:blue;}
+  font-family: "Open Sans", Arial, sans-serif;
+}
+nav ul li {
+  display:inline;
+}
+.unu {
+  color:red;
+}
+.doi {
+  color:blue;
+}
