@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SMAG</title>
+    <link rel="stylesheet" href="css/reset.css">
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <![endif]-->
@@ -17,25 +18,29 @@
         <h1>Acesta este un titlu</h1>
         <nav>
           <ul>
-            <li>Home</li>
-            <li>Info</li>
-            <li>About</li>
-            <li>Contact</li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Info</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
           </ul>
         </nav>
       </section>
-
     </header>
-    <div class="unu">
-      This is a test for Git.
-    </div>
-    <div class="doi">
-      This is a test for Git.
-    </div>
+    <main id="main" role="main">
+      <section>
+        <p>This is section tag. This is a test for Git.</p>
+      </section>
+      <aside id="aside" role="complementary">
+        <p>Thisis aside tag. This is a test for Git.</p>
+      </aside>
+
+    </main>
     <footer>
+      This is footer tag.<br>
       <script type="text/javascript">
         afiseazaData();
       </script>
+      <p>2016 @ jbx</p>
     </footer>
   </body>
 </html>
