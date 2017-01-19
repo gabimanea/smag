@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript</title>
+
+  </head>
+  <body>
+    <div id="res"></div>
+    <button id="generate" type="button" name="button">Genereaza</button>
+    <script type="text/javascript">
+    (function(){
+      "use strict";
+
+      document.getElementById("generate").addEventListener("click", get_total, false);
+
+      var timeDiff = {
+        setStartTime:function()
+        {
+          var d = new Date();
+          this.time = d.getTime();
+        },
+        getDiff:function()
+        {
+          var d2 = new Date();
+          return (d2.getTime()-this.time);
+        }
+      };
+
+      function get_total()
+      {
+        timeDiff.setStartTime();
+
+        var total = 0, count = 1;
+        while (count <= 25) {
+          total += count;
+          count += 1;
+        }
+        //var llt = total;
+
+        //console.log(total);
+        //document.write(total);
+
+        var output = "";
+
+        output += 'Rezultat adunare: ' + total.toLocaleString('ro-RO');
+
+        output += '<br><hr>';
+
+        var total_time = timeDiff.getDiff();
+
+        output += 'S-au adunat ' + count.toLocaleString('ro-RO') + ' de numere in ' + (total_time/1000) + ' secunde sau ' + (total_time) + ' milisecunde.';
+
+        document.getElementById('res').innerHTML = output;
+
+        location.href="#generate";
+      }
+
+
+
+
+    }());//final
+
+
+
+
+    </script>
+    <button id="restore" type="refresh" name="button" onClick="history.go(0)">Restore</button>
+  </body>
+</html>
