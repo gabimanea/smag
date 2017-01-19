@@ -7,6 +7,7 @@
   </head>
   <body>
     <div id="res"></div>
+    <input type="text" id="textno" name="textno" value="">
     <button id="generate" type="button" name="button">Genereaza</button>
     <script type="text/javascript">
     (function(){
@@ -31,8 +32,10 @@
       {
         timeDiff.setStartTime();
 
+        var tnombers = document.getElementById("textno").value;
+
         var total = 0, count = 1;
-        while (count <= 25) {
+        while (count <= tnombers) {
           total += count;
           count += 1;
         }
@@ -43,13 +46,20 @@
 
         var output = "";
 
-        output += 'Rezultat adunare: ' + total.toLocaleString('ro-RO');
+        if (tnombers < 0) {
+          output = 'Trebuie pus un numar pozitiv.'
+        }
+        else {
+          output += 'Rezultat adunare: ' + total.toLocaleString('ro-RO');
 
-        output += '<br><hr>';
+          output += '<br>Afișare pentru limba română.<hr>';
 
-        var total_time = timeDiff.getDiff();
+          var total_time = timeDiff.getDiff();
 
-        output += 'S-au adunat ' + count.toLocaleString('ro-RO') + ' de numere in ' + (total_time/1000) + ' secunde sau ' + (total_time) + ' milisecunde.';
+          output += 'S-au adunat ' + count.toLocaleString('ro-RO') + ' de numere in ' + (total_time/1000) + ' secunde sau ' + (total_time) + ' milisecunde.';
+        }
+
+
 
         document.getElementById('res').innerHTML = output;
 
